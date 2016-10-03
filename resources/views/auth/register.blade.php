@@ -31,7 +31,7 @@
                 @endif
             </p>
 
-           <label for="password-confirm" class="label">Senha</label>
+           <label for="password-confirm" class="label">Confirmar Senha</label>
             <p class="control">
               <input id="password-confirm" name="password_confirmation" class="input {{ $errors->has('password_confirmation') ? ' is-danger' : '' }}" type="password" placeholder="Confirme a senha" required autofocus>
                 @if ($errors->has('password_confirmation'))
