@@ -18,9 +18,9 @@
                 @endif
             </p>
 
-            <label for="password" class="label">Senha</label>
+            <label for="password" class="label">Nova Senha</label>
             <p class="control">
-              <input id="password" name="password" class="input {{ $errors->has('password') ? ' is-danger' : '' }}" type="password" placeholder="Sua senha" required autofocus>
+              <input id="password" name="password" class="input {{ $errors->has('password') ? ' is-danger' : '' }}" type="password" placeholder="Sua nova senha" required autofocus>
                 @if ($errors->has('password'))
                     <span class="help is-danger">>{{ $errors->first('password') }}</span>
                 @endif
