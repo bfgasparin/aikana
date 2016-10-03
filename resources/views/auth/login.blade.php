@@ -30,6 +30,7 @@
               </label>
             </p>
 
+            <a  href="{{ url('/password/reset') }}">Ih! Não lembro a senha!</a>
             <div class="tile">
                 <div class="container">
                     <button class="button is-outlined is-primary">Logar </button>
