@@ -28,7 +28,7 @@
 
            <label for="password-confirm" class="label">Confirmar Senha</label>
             <p class="control">
-              <input id="password-confirm" name="password_confirmation" class="input {{ $errors->has('password_confirmation') ? ' is-danger' : '' }}" type="password" placeholder="Confirme a senha" required autofocus>
+              <input id="password-confirm" name="password_confirmation" class="input {{ $errors->has('password_confirmation') ? ' is-danger' : '' }}" type="password" placeholder="Confirme sua nova senha" required autofocus>
                 @if ($errors->has('password_confirmation'))
                     <span class="help is-danger">>{{ $errors->first('password_confirmation') }}</span>
                 @endif
