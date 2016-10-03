@@ -21,6 +21,7 @@
     </script>
 </head>
 <body>
+    <div id="app">
             <nav class="nav">
               <div class="nav-left">
                 <a class="nav-item is-brand" href="{{ url('/') }}">
@@ -59,8 +60,8 @@
               </div>
             </nav>
 
-    @yield('content')
-
+            @yield('content')
+    </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
 </body>
