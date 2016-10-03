@@ -23,7 +23,7 @@
 <body>
             <nav class="nav">
               <div class="nav-left">
-                <a class="nav-item is-brand" href="#">
+                <a class="nav-item is-brand" href="{{ url('/') }}">
                   <h1 class="title">{{ config('app.name', 'Festa Gasparin') }}</h1>
                 </a>
               </div>
