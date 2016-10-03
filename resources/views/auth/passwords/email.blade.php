@@ -18,7 +18,7 @@
             <p class="control">
               <input name="email" class="input {{ $errors->has('email') ? ' is-danger' : '' }}" type="text" placeholder="Entre com seu email" required autofocus>
                 @if ($errors->has('email'))
-                    <span class="help is-danger">>{{ $errors->first('email') }}</span>
+                    <span class="help is-danger">{{ $errors->first('email') }}</span>
                 @endif
             </p>
 

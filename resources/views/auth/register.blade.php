@@ -11,7 +11,7 @@
             <p class="control">
               <input name="name" class="input {{ $errors->has('name') ? ' is-danger' : '' }}" type="text" placeholder="Entre com seu Nome" required autofocus value="{{ old('name') }}">
                 @if ($errors->has('name'))
-                    <span class="help is-danger">>{{ $errors->first('name') }}</span>
+                    <span class="help is-danger">{{ $errors->first('name') }}</span>
                 @endif
             </p>
 
@@ -19,7 +19,7 @@
             <p class="control">
               <input name="email" class="input {{ $errors->has('email') ? ' is-danger' : '' }}" type="text" placeholder="Entre com seu E-mail" required autofocus value="{{ old('email') }}">
                 @if ($errors->has('email'))
-                    <span class="help is-danger">>{{ $errors->first('email') }}</span>
+                    <span class="help is-danger">{{ $errors->first('email') }}</span>
                 @endif
             </p>
 
@@ -27,7 +27,7 @@
             <p class="control">
               <input id="password" name="password" class="input {{ $errors->has('password') ? ' is-danger' : '' }}" type="password" placeholder="Sua senha" required autofocus>
                 @if ($errors->has('password'))
-                    <span class="help is-danger">>{{ $errors->first('password') }}</span>
+                    <span class="help is-danger">{{ $errors->first('password') }}</span>
                 @endif
             </p>
 
@@ -35,7 +35,7 @@
             <p class="control">
               <input id="password-confirm" name="password_confirmation" class="input {{ $errors->has('password_confirmation') ? ' is-danger' : '' }}" type="password" placeholder="Confirme sua senha" required autofocus>
                 @if ($errors->has('password_confirmation'))
-                    <span class="help is-danger">>{{ $errors->first('password_confirmation') }}</span>
+                    <span class="help is-danger">{{ $errors->first('password_confirmation') }}</span>
                 @endif
             </p>
 
