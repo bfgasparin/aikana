@@ -13,7 +13,9 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+import Notification from 'vue-bulma-notification';
+
+Vue.component('notification', Notification);
 
 const app = new Vue({
     el: '#app'
