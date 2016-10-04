@@ -2,20 +2,21 @@
 
 @section('content')
 <div class="column is-half is-offset-one-quarter">
-    <div class="box is-primary">
+    <div class="box">
         <div class="tile">
             <div class="container">
-                <a class="button is-large is-outlined is-primary" href="{{ url ('/auth/facebook') }}" >
+                <a class="button is-large is-outlined is-info" href="{{ url ('/auth/facebook') }}" >
                     <span class="icon">
                       <i class="fa fa-facebook"></i>
                     </span>
-                    <span>Logar com o facebook</span>
+                    <span>Logar com o Facebook</span>
                 </a>
             </div>
         </div>
     </div>
+
     <div class="box is-primary">
-        <h1 class="title is-3 has-text-centered">Logar</h1>
+        <h1 class="title is-3 has-text-centered">Logar no <strong>Gasparin Festas</strong></h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
 
