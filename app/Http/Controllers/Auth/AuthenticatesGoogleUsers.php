@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Foundation\Auth\RedirectsUsers;
 use Socialite;
 
 trait AuthenticatesGoogleUsers
@@ -25,16 +26,27 @@ trait AuthenticatesGoogleUsers
      */
     public function handleGoogleProviderCallback()
     {
-        $user = $this->findOrCreateGoogleUser(
-            Socialite::driver('google')->user()
+       $googleUser = Socialite::driver('google')->user();
+
+        $user = $this->findGoogleUser(
+            $googleUser
         );
+
+        if(is_null($user)){
+            return redirect('register')->withInput([
+                'name' => $googleUser->name,
+                'email' => $googleUser->email,
+                'social_avatar' => $googleUser->avatar,
+                'google_id' => $googleUser->id
+            ]);
+        }
 
         auth()->login($user);
 
-        return redirect('/');
+        return redirect()->intended($this->redirectPath());
     }
 
-    public function findOrCreateGoogleUser($googleUser)
+    public function findGoogleUser($googleUser)
     {
         $user = User::where(function($query) use ($googleUser){
             $query->where('google_id', $googleUser->id)
@@ -47,16 +59,8 @@ trait AuthenticatesGoogleUsers
                 $user->google_id = $googleUser->id;
                 $user->save();
             }
-
-            return $user;
         }
 
-        return User::create([
-            'username' =>  str_slug($googleUser->name),
-            'name' => $googleUser->name,
-            'email' => $googleUser->email,
-            'avatar' => $googleUser->avatar,
-            'google_id' => $googleUser->id,
-        ]);
+        return $user;
     }
 }

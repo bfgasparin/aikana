@@ -96,8 +96,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'avatar' => [
+            'required_without' => 'O avatar é obrigatório',
+        ],
+        'social_avatar' => [
+            'required_without' => 'O avatar é obrigatório',
         ],
     ],
 

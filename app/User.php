@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'facebook_id', 'google_id',
+        'name', 'email', 'password', 'username', 'social_avatar', 'avatar', 'facebook_id', 'google_id',
     ];
 
     /**
@@ -37,5 +37,13 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPassword($token));
-    }    
+    }
+
+    protected static function boot()
+    {
+        static::creating(function (User $user) {
+            $user->email_token = bcrypt($user->email);
+        });
+    }
+
 }

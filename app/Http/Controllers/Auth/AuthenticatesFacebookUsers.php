@@ -25,16 +25,28 @@ trait AuthenticatesFacebookUsers
      */
     public function handleFacebookProviderCallback()
     {
-        $user = $this->findOrCreateFacebookUser(
-            Socialite::driver('facebook')->user()
+        $facebookUser = Socialite::driver('facebook')->user();
+
+        $user = $this->findFacebookUser(
+            $facebookUser
         );
+
+        if(is_null($user)){
+            return redirect('register')->withInput([
+                'name' => $facebookUser->name,
+                'email' => $facebookUser->email,
+                'social_avatar' => $facebookUser->avatar,
+                'facebook_id' => $facebookUser->id
+            ]);
+        }
 
         auth()->login($user);
 
-        return redirect('/');
+        return redirect()->intended($this->redirectPath());
+
     }
 
-    public function findOrCreateFacebookUser($facebookUser)
+    public function findFacebookUser($facebookUser)
     {
         $user = User::where(function($query) use ($facebookUser){
             $query->where('facebook_id', $facebookUser->id)
@@ -47,16 +59,8 @@ trait AuthenticatesFacebookUsers
                 $user->facebook_id = $facebookUser->id;
                 $user->save();
             }
-
-            return $user;
         }
 
-        return User::create([
-            'username' =>  str_slug($facebookUser->name),
-            'name' => $facebookUser->name,
-            'email' => $facebookUser->email,
-            'avatar' => $facebookUser->avatar,
-            'facebook_id' => $facebookUser->id,
-        ]);
+        return $user;
     }
 }

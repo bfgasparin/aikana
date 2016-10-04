@@ -29,7 +29,7 @@
     </div>
 
     <div class="box is-primary">
-        <h1 class="title is-3 has-text-centered">Logar no <strong>Gasparin Festas</strong></h1>
+        <h1 class="title is-3 has-text-centered">Logar no <strong>{{ config('app.name') }}</strong></h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
 
