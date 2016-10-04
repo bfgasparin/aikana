@@ -21,5 +21,6 @@ Route::get('auth/facebook/callback', 'Auth\LoginController@handleFacebookProvide
 Route::get('auth/google', 'Auth\LoginController@redirectToGoogleProvider');
 Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleProviderCallback');
 
+Route::get('email/confirmation/{token}', 'Auth\RegisterController@confirmEmail');
 
 Route::get('/home', 'HomeController@index');

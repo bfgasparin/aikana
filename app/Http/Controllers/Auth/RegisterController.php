@@ -23,6 +23,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use ValidatesEmail;
 
     /**
      * Where to redirect users after login / registration.
@@ -53,15 +54,16 @@ class RegisterController extends Controller
 
         $data = $request->all();
 
-        if($request->hasFIle('avatar')){
+        if($request->hasFile('avatar')){
             $data['avatar'] = $request->file('avatar')->store('avatar');
         }
 
         event(new Registered($user = $this->create($data)));
 
-        $this->guard()->login($user);
-
-        return redirect($this->redirectPath());
+        return redirect('login')->with([
+            'title' => trans('email.confirm.title'),
+            'status' => trans('email.confirm.message', ['app'  => config('app.name')])
+        ]);
     }
 
     /**

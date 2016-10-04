@@ -6,10 +6,6 @@
 <div class="column is-half is-offset-one-quarter">
     <div class="box is-primary">
 
-        @if (session('status'))
-            <notification class="is-info" :title="'Email de Reset de Senha Enviado'" :direction="'Down'" message="{{ session('status') }}" :duration="0"></notification>
-        @endif
-
         <h1 class="title is-3 has-text-centered">Resetar a senha</h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
             {{ csrf_field() }}
