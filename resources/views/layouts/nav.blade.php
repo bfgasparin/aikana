@@ -7,8 +7,8 @@
 
   <div class="nav-center" >
     <span class="nav-item is-hidden-mobile">
-       <figure class="image">
-         <img src="images/logo.jpg">
+       <figure class="image is-64x64">
+         <img src="images/logo.png">
       </figure>
     </span>
   </div>
