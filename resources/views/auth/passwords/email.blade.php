@@ -24,7 +24,7 @@
 
             <div class="tile">
                 <div class="container">
-                    <button class="button is-outlined is-primary">Resetar Senha</button>
+                    <button class="button is-large is-outlined is-primary">Resetar Senha</button>
                 </div>
             </div>
         </form>

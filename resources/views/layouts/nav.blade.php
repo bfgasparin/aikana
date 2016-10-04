@@ -16,15 +16,15 @@
   <div class="nav-right nav-menu">
     @if (Auth::guest())
     <span class="nav-item">
-        <a class="button is-primary is-outlined" href="{{ url('/login') }}">Logar</a>
+        <a class="button is-medium is-primary is-outlined" href="{{ url('/login') }}">Logar</a>
     </span>
     <span class="nav-item">
-        <a class="button is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
+        <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
     </span>
     @else
 
     <span class="nav-item">
-        <a  class="button is-info is-outlined" href="{{ url('/logout') }}"
+        <a  class="button is-medium is-info is-outlined" href="{{ url('/logout') }}"
             onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
             Logout

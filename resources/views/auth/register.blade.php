@@ -41,7 +41,7 @@
 
             <div class="tile">
                 <div class="container">
-                    <button class="button is-outlined is-primary">Cadastrar</button>
+                    <button class="button is-large is-outlined is-primary">Cadastrar</button>
                 </div>
             </div>
         </form>

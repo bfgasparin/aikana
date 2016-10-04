@@ -3,6 +3,18 @@
 @section('content')
 <div class="column is-half is-offset-one-quarter">
     <div class="box is-primary">
+        <div class="tile">
+            <div class="container">
+                <a class="button is-large is-outlined is-primary" href="{{ url ('/auth/facebook') }}" >
+                    <span class="icon">
+                      <i class="fa fa-facebook"></i>
+                    </span>
+                    <span>Logar com o facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box is-primary">
         <h1 class="title is-3 has-text-centered">Logar</h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
@@ -33,7 +45,7 @@
             <a  href="{{ url('/password/reset') }}">Ih! Não lembro a senha!</a>
             <div class="tile">
                 <div class="container">
-                    <button class="button is-outlined is-primary">Logar </button>
+                    <button class="button is-large is-outlined is-primary">Logar </button>
                 </div>
             </div>
         </form>
