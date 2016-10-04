@@ -15,6 +15,19 @@
         </div>
     </div>
 
+    <div class="box">
+        <div class="tile">
+            <div class="container">
+                <a class="button is-large is-outlined is-danger" href="{{ url ('/auth/google') }}" >
+                    <span class="icon">
+                      <i class="fa fa-google"></i>
+                    </span>
+                    <span>Logar com o Google</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="box is-primary">
         <h1 class="title is-3 has-text-centered">Logar no <strong>Gasparin Festas</strong></h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">

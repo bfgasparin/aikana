@@ -21,6 +21,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     use AuthenticatesFacebookUsers;
+    use AuthenticatesGoogleUsers;
 
     /**
      * Where to redirect users after login.
