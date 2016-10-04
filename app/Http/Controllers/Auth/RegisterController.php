@@ -52,7 +52,10 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         $data = $request->all();
-        $data['avatar'] = $request->file('avatar')->store('avatar');
+
+        if($request->hasFIle('avatar')){
+            $data['avatar'] = $request->file('avatar')->store('avatar');
+        }
 
         event(new Registered($user = $this->create($data)));
 
