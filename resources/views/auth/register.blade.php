@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{ dump($errors->all()) }}
 <user-register avatar="{{ old('social_avatar') }}" inline-template>
     <div>
         <div class="column is-half is-offset-one-quarter">
