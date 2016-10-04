@@ -5,6 +5,7 @@ namespace App;
 use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Storage;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $appends = [
+        'avatar_url'
+    ];
+    /**
+     * Get the administrator flag for the user.
+     *
+     * @return bool
+     */
+    public function getAvatarUrlAttribute()
+    {
+        $avatar =  $this->avatar ?: $this->social_avatar;
+
+        return Storage::url($avatar);
+    }
 
     /**
      * Send the password reset notification.
