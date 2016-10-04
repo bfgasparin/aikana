@@ -7,7 +7,7 @@
     <div class="box is-primary">
 
         @if (session('status'))
-            <notification :title="'Normal'" :direction="'Down'" message="{{ session('status') }}" :duration="0"></notification>
+            <notification class="is-info" :title="'Email de Reset de Senha Enviado'" :direction="'Down'" message="{{ session('status') }}" :duration="0"></notification>
         @endif
 
         <h1 class="title is-3 has-text-centered">Resetar a senha</h1>
