@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="column is-half is-offset-one-quarter">
-    <div class="box is-primary">
-        <h1 class="title is-3 has-text-centered">Completar meu cadastro </h1>
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-            <div class="tile">
-                <div class="container">
-                    <figure class="image is-128x128">
-                        <img src="{{ old('social_avatar') }}">
-                    </figure>
-                </div>
+    <h1 class="title is-3 has-text-centered">Completar meu cadastro </h1>
+    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+            <div class="box is-primary">
+                    <div class="tile">
+                        <div class="container">
+                            <figure class="image is-128x128">
+                                <img src="{{ old('social_avatar') ?: 'http://placehold.it/128x128' }}">
+                            </figure>
+                        </div>
+                    </div>
             </div>
-
             {{ csrf_field() }}
             <input type="hidden" name="social_avatar" value="{{ old('social_avatar') }}">
             <input type="hidden" name="facebook_id" value="{{ old('facebook_id') }}">
@@ -102,7 +102,6 @@
                     <button class="button is-large is-outlined is-primary">Cadastrar</button>
                 </div>
             </div>
-        </form>
-    </div>
+    </form>
 </div>
 @endsection

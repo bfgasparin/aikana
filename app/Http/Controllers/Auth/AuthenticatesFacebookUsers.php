@@ -40,6 +40,11 @@ trait AuthenticatesFacebookUsers
             ]);
         }
 
+        $user->fill([
+            'social_avatar' => $facebookUser->avatar,
+        ]);
+        $user->save();
+
         auth()->login($user);
 
         return redirect()->intended($this->redirectPath());

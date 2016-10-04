@@ -41,6 +41,12 @@ trait AuthenticatesGoogleUsers
             ]);
         }
 
+        $user->fill([
+            'social_avatar' => $googleUser->avatar,
+        ]);
+
+        $user->save();
+
         auth()->login($user);
 
         return redirect()->intended($this->redirectPath());
