@@ -36,17 +36,27 @@ trait AuthenticatesFacebookUsers
 
     public function findOrCreateFacebookUser($facebookUser)
     {
-        $user = User::firstOrNew(['facebook_id' => $facebookUser->id]);
+        $user = User::where(function($query) use ($facebookUser){
+            $query->where('facebook_id', $facebookUser->id)
+                ->orWhere('email', $facebookUser->email)
+            ;
+        })->first();
 
-        if ($user->exists) return $user;
+        if ($user) {
+            if(!$user->facebook_id){
+                $user->facebook_id = $facebookUser->id;
+                $user->save();
+            }
 
-        $user->fill([
+            return $user;
+        }
+
+        return User::create([
             'username' =>  str_slug($facebookUser->name),
             'name' => $facebookUser->name,
             'email' => $facebookUser->email,
             'avatar' => $facebookUser->avatar,
-        ])->save();
-
-        return $user;
+            'facebook_id' => $facebookUser->id,
+        ]);
     }
 }

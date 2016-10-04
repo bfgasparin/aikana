@@ -36,17 +36,27 @@ trait AuthenticatesGoogleUsers
 
     public function findOrCreateGoogleUser($googleUser)
     {
-        $user = User::firstOrNew(['google_id' => $googleUser->id]);
+        $user = User::where(function($query) use ($googleUser){
+            $query->where('google_id', $googleUser->id)
+                ->orWhere('email', $googleUser->email)
+            ;
+        })->first();
 
-        if ($user->exists) return $user;
+        if ($user) {
+            if(!$user->google_id){
+                $user->google_id = $googleUser->id;
+                $user->save();
+            }
 
-        $user->fill([
+            return $user;
+        }
+
+        return User::create([
             'username' =>  str_slug($googleUser->name),
             'name' => $googleUser->name,
             'email' => $googleUser->email,
             'avatar' => $googleUser->avatar,
-        ])->save();
-
-        return $user;
+            'google_id' => $googleUser->id,
+        ]);
     }
 }
