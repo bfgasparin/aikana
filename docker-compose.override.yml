@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - '.:/var/www/html'
+    ports:
+      - 8000:80
+  node:
+    image: node:6.7-onbuild
+    working_dir: /var/www/html
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes_from:
+      - web
+    networks:
+      - front-tier
+    command: npm run-script dev

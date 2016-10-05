@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  web:
+    image: brunogasparin/gasparin-festas
+    links:
+      - db
+    env_file: .env
+    networks:
+      - front-tier
+      - back-tier
+  db:
+    image: mysql:5.7
+    env_file: .db.env
+    networks:
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:
