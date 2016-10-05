@@ -1,3 +1,3 @@
-# Gasparin 2016 Party App
+# Aikana App
 
-Gasparin 2016 Party Application
+Aikana Application

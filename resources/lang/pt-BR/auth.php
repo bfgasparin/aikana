@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Não achamos um usuário com esses dados. Tem certeza que você foi convidado pra festa?',
-    'throttle' => 'Opa! Você está errando seu login muitas vezes. Por favor, volte e tente novamente mais tarde. A família Gasparin agradece!',
+    'throttle' => 'Opa! Você está errando seu login muitas vezes. Por favor, volte e tente novamente mais tarde. A família Ferme Gasparin agradece!',
 
 ];

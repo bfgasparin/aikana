@@ -1,7 +1,7 @@
 <nav class="nav has-shadow ">
   <div class="nav-left">
     <a class="nav-item is-brand" href="{{ url('/') }}">
-      <h1 class="title">{{ config('app.name', 'Festa Gasparin') }}</h1>
+      <h1 class="title">{{ config('app.name', 'Aikana') }}</h1>
     </a>
   </div>
 

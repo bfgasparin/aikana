@@ -30,7 +30,7 @@
               <div class="hero-body is-paddingless">
                 <div class="container">
                   <h1 class="title">
-                    Meu <strong>Gasparin ID</strong>
+                    Meu <strong>Aikana ID</strong>
                   </h1>
                 </div>
               </div>

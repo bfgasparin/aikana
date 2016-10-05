@@ -20,16 +20,18 @@
         </div>
       </p>
       <p>
-          <span class="icon"><i class="fa fa-code"></i>
-          </span> com <span class="icon"><i class="fa fa-heart"></i></span>, muito <span><i class="fa fa-coffee"></i></span> e pouco
-          <span><i class="fa fa-clock-o"></i></span>
+          <span class="icon"><i class="fa fa-code"></i></span> em casativas <strong>5 madrugadas</strong>
+           com muito <span class="icon"><i class="fa fa-heart"></i></span>, bastante <span><i class="fa fa-coffee"></i></span>, e pouca horas de   <span><i class="fa fa-bed"></i></span>,
            por <a href="https://www.facebook.com/bruno.gasparin">Bruno Ferme Gasparin</a>..
       </p>
       <p>
-          Código sob a licença <a href="https://github.com/fundon/vue-admin/blob/master/LICENSE">MIT</a>.
+          Um agradecimento especial à Aika e Luna.
       </p>
       <p>
-          <a class="icon" href="https://github.com/bfgasparin/gasparin-party-2016">
+          Aikana.
+      </p>
+      <p>
+          <a class="icon" href="https://github.com/bfgasparin/aikana">
             <i class="fa fa-github"></i>
           </a>
       </p>

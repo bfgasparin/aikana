@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    image: brunogasparin/gasparin-festas
+    image: brunogasparin/aikana
     links:
       - db
     env_file: .env

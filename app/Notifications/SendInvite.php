@@ -43,7 +43,7 @@ class SendInvite extends Notification
     {
         return (new MailMessage)
                     ->greeting('Hora da Festa!')
-                    ->subject('Famíla Gasparin')
+                    ->subject('Famíla Ferme Gasparin')
                     ->line('Você foi convidado para o aniversário do Bruno, Victor e Marta!')
                     ->action('Faça o cadastro dejá!', url('/invite', $this->invite->token))
                     ->line('Esperamos você lá!');

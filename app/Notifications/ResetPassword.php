@@ -47,7 +47,7 @@ class ResetPassword extends Notification
         return (new MailMessage)
             ->subject('Aeeee, esqueceu a senha?')
             ->greeting('Olá!')
-            ->line('Você está recebendo esse email pois requisitou a troca de senha de sua conta na Gasparin Festas.')
+            ->line(sprintf('Você está recebendo esse email pois requisitou a troca de senha de sua conta na %s.', config('app.name')))
             ->line('Clique no botão abaixo para trocar de senha.')
             ->action('Trocar minha senha', url('password/reset', $this->token))
             ->line('Se você não solicitou uma troca de senha, ignore esta mensagem.');

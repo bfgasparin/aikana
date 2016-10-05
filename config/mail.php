@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'festagasparin@noreply.com',
-        'name' => 'Família Gasparin',
+        'address' => 'aikana@noreply.com',
+        'name' => 'Família Ferme Gasparin',
     ],
 
     /*
