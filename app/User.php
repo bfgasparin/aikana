@@ -40,6 +40,11 @@ class User extends Authenticatable
         return $this->belongsTo(Invite::class);
     }
     
+    public function acceptedAnInvite()
+    {
+        return !empty($this->invite_id);
+    }
+
     public function acceptInvite(Invite $invite)
     {
         $invite->accepted_at = Carbon::now();
