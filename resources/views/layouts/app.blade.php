@@ -28,7 +28,7 @@
             <div class="flat notifications">
                 <div class="container">
                     @if (session('status'))
-                        <notification class="is-info" :title="'{{ session('title') }}'" :direction="'Down'" message="{{ session('status') }}" :duration="0"></notification>
+                        <notification class="is-info" :title="'{{ session('title') }}'" :direction="'Right'" message="{{ session('status') }}" :duration="0"></notification>
                     @endif
                 </div>
             </div>
