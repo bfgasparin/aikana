@@ -66,6 +66,15 @@ class RegisterController extends Controller
         ]);
     }
 
+
+    /**
+     * Handle the completion of the registration.
+     *
+     */
+    public function showRegisterComplete()
+    {
+        return view('auth.register-complete');
+    }
     /**
      * Get a validator for an incoming registration request.
      *

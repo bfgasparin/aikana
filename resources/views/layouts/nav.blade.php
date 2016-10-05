@@ -6,11 +6,13 @@
   </div>
 
   <div class="nav-center" >
-    <span class="nav-item is-hidden-mobile">
+  <div class="tile">
+    <span class="is-hidden-mobile">
        <figure class="image is-64x64">
          <img src="images/logo.png">
       </figure>
     </span>
+    </div>
   </div>
 
   <div class="nav-right nav-menu">

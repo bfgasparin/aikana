@@ -33,7 +33,7 @@ trait AuthenticatesGoogleUsers
         );
 
         if(is_null($user)){
-            return redirect('register')->withInput([
+            return redirect('register/complete')->withInput([
                 'name' => $googleUser->name,
                 'email' => $googleUser->email,
                 'social_avatar' => $googleUser->avatar,

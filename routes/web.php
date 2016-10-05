@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
+Route::get('register/complete', 'Auth\RegisterController@showRegisterComplete');
 Auth::routes();
 Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebookProvider');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleFacebookProviderCallback');

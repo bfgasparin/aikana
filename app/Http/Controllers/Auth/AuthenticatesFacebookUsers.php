@@ -32,7 +32,7 @@ trait AuthenticatesFacebookUsers
         );
 
         if(is_null($user)){
-            return redirect('register')->withInput([
+            return redirect('register/complete')->withInput([
                 'name' => $facebookUser->name,
                 'email' => $facebookUser->email,
                 'social_avatar' => $facebookUser->avatar,

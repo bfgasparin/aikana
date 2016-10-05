@@ -36,6 +36,8 @@
 
 
         @yield('content')
+
+        @include('layouts.footer')
     </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
