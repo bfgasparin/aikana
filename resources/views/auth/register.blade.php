@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<user-register avatar="{{ old('social_avatar') }}" inline-template>
+<user-register avatar="{{ old('social_avatar') }}" has-error="{{ !empty($errors->all()) }}"  inline-template>
     <div>
         <div class="column is-half is-offset-one-quarter">
         <h1 class="title is-3 has-text-centered">Efetuar meu cadastro</h1>
-        <template v-if="!manual">
+        <template v-if="!showManual">
             <div class="box">
                 <div class="tile">
                     <div class="container">
@@ -45,7 +45,7 @@
             </div>
         </template>
 
-        <template v-if="manual">
+        <template v-if="showManual">
             <div class="box">
                 <div class="tile">
                     <div class="container">

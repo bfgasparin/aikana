@@ -13,6 +13,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('invite/{token}', 'Auth\InviteController@accept');
+
 Route::get('register/complete', 'Auth\RegisterController@showRegisterComplete');
 Auth::routes();
 Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebookProvider');

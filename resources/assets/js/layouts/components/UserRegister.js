@@ -1,5 +1,5 @@
 export default {
-    props: ['avatar'],
+    props: ['avatar', 'hasError'],
 
     data: function() {
         return {
@@ -11,7 +11,8 @@ export default {
     },
 
     computed: {
-        avatarFile: function () { return this.image || 'http://placehold.it/128x128' }
+        avatarFile: function () { return this.image || 'http://placehold.it/128x128' },
+        showManual: function () { return this.manual || this.hasError }
     },
 
     methods: {

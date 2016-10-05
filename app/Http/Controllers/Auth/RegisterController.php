@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\User;
+use Validator;
+use App\Invite;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
-use Validator;
 
 class RegisterController extends Controller
 {
@@ -101,7 +103,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $data['password'] = isset($data['password']) ? bcrypt($data['password']) : null;
-        return User::create($data);
+        $nonEmptyData = (new Collection($data))->filter(function($value){
+            return !empty($value);
+        })->toArray();
+
+        $nonEmptyData['password'] = isset($nonEmptyData['password']) ? bcrypt($nonEmptyData['password']) : null;
+        $user = User::create($nonEmptyData);
+
+        if(session()->has('invite_id')){
+            $user->acceptInvite(Invite::find(session()->pull('invite_id')));
+        }
+
+        return $user;
     }
 }

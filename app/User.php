@@ -2,11 +2,12 @@
 
 namespace App;
 
-use App\Exceptions\EmailAlreadyVerified;
-use App\Notifications\ResetPassword;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Storage;
+use Carbon\Carbon;
+use App\Notifications\ResetPassword;
+use App\Exceptions\EmailAlreadyVerified;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -33,6 +34,21 @@ class User extends Authenticatable
     protected $appends = [
         'avatar_url'
     ];
+  
+    public function invite()
+    {
+        return $this->belongsTo(Invite::class);
+    }
+    
+    public function acceptInvite(Invite $invite)
+    {
+        $invite->accepted_at = Carbon::now();
+        $invite->user()->save($this);
+
+        $invite->save();
+
+        return $this;
+    }
     /**
      * Get the administrator flag for the user.
      *
@@ -56,13 +72,6 @@ class User extends Authenticatable
         $this->notify(new ResetPassword($token));
     }
 
-    protected static function boot()
-    {
-        static::creating(function (User $user) {
-            $user->email_token = str_random(30);
-        });
-    }
-
     public function confirmEmail()
     {
         if ($this->verified){
@@ -75,4 +84,11 @@ class User extends Authenticatable
         return $this;
     }
 
+    protected static function boot()
+    {
+        static::creating(function (User $user) {
+            $user->email_token = str_random(30);
+        });
+    }
+    
 }
