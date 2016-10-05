@@ -11,9 +11,8 @@
                 </div>
                 <input ref="inputAvatar" v-bind:class="{ 'is-hidden' : image }" name="avatar"  type="file" class="input" @change="onFileChange" :filaname="file">
                 @if ($errors->has('avatar'))
-                    <span v-if="!image" class="help is-danger">{{ $errors->first('avatar') }}</span>
+                    <span v-if="image" class="help is-danger">{{ $errors->first('avatar') }}</span>
                 @endif
-                </template>
                 <template v-if="image">
                     <button class="button is-info is-outlined" @click="removeImage">Remove image</button>
                 </template>

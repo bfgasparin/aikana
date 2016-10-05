@@ -5,7 +5,8 @@ export default {
         return {
             image: this.avatar,
             socialImage : this.avatar,
-            file: null
+            file: null,
+            manual: false,
         }
     },
 
@@ -35,6 +36,14 @@ export default {
           this.image = '';
           this.socialImage = '';
           this.file = '';
+        },
+
+        activeManualRegister: function() {
+            this.manual = true;
+        },
+
+        inactiveManualRegister: function() {
+            this.manual = false;
         }
   }
 }
