@@ -8,7 +8,7 @@
         {{ config('app.name') }}
       </h1>
       <h2 class="subtitle">
-        A diversão para as festas!
+        A diversão para as festas em família!
       </h2>
     </div>
   </div>
