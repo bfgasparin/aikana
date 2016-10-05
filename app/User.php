@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\Exceptions\EmailAlreadyVerified;
 use App\Notifications\ResetPassword;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Storage;
 
 class User extends Authenticatable
@@ -58,8 +59,20 @@ class User extends Authenticatable
     protected static function boot()
     {
         static::creating(function (User $user) {
-            $user->email_token = bcrypt($user->email);
+            $user->email_token = str_random(30);
         });
+    }
+
+    public function confirmEmail()
+    {
+        if ($this->verified){
+            throw new EmailAlreadyVerified(trans('email.confirmed.already'));
+        }
+
+        $this->verified = true;
+        $this->save();
+
+        return $this;
     }
 
 }

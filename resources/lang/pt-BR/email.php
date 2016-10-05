@@ -12,7 +12,8 @@ return [
     */
     'confirmed' => [
         'title' => 'Aeee!',
-        'message' => 'Seu email for confirmado. Você já pode logar no :app.',
+        'message' => 'Seu email está confirmado. Você já pode logar no :app.',
+        "already" => "Seu email já foi verificado e não precisa ser confirmado novamente",
     ],
     'confirm' => [
         'title' =>  'Falta Pouco!',
