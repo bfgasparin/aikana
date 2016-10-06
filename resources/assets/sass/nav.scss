@@ -1,0 +1,22 @@
+.nav {
+    .image img {
+        width: 180px;
+    }
+    .nav-left {
+        .left-logo img {
+            max-height: 65px;
+        }
+    }
+}
+
+.nav-mobile {
+    .container {
+        padding-bottom: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .nav-toggle {
+            display: inline;
+        }
+    }
+}

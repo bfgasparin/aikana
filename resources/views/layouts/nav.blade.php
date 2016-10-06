@@ -1,13 +1,15 @@
-<nav class="nav has-shadow ">
-  <div class="nav-left">
+<nav class="nav">
+  <div class="nav-left is-hidden-mobile">
     <a class="nav-item is-brand" href="{{ url('/') }}">
-      <h1 class="title">{{ config('app.name', 'Aikana') }}</h1>
+        <figure class="left-logo">
+             <img src="images/simple-logo.png">
+        </figure>
     </a>
   </div>
 
   <div class="nav-center" >
   <div class="tile">
-       <figure class="image is-64x64">
+       <figure class="image">
          <img src="images/logo.png">
       </figure>
     </div>
@@ -36,23 +38,23 @@
     </span>
     @endif
   </div>
-</nav>
 
-  <div class="hero">
-    <div class="container">
-      <div class="tile">
-        <span class="nav-toggle">
-            <div class="columns is-mobile">
-                <div class="column"></div>
-                  <div class="column ">
-                      <a class="button is-medium is-primary is-outlined" href="{{ url('/login') }}">Logar</a>
-                  </div>
-                  <div class="column">
-                      <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
-                  </div>
-                <div class="column"></div>
+</nav>
+    <div class="hero nav-mobile">
+        <div class="container">
+            <div class="tile">
+                <span class="nav-toggle">
+                    <div class="columns is-mobile">
+                        <div class="column"></div>
+                          <div class="column ">
+                              <a class="button is-medium is-primary is-outlined" href="{{ url('/login') }}">Logar</a>
+                          </div>
+                          <div class="column">
+                              <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
+                          </div>
+                        <div class="column"></div>
+                    </div>
+                </span>
             </div>
-        </span>
-      </div>
+        </div>
     </div>
-  </div>
