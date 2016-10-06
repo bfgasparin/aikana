@@ -25,7 +25,7 @@
            por <a href="https://www.facebook.com/bruno.gasparin">Bruno Ferme Gasparin</a>..
       </p>
       <p>
-          Um agradecimento especial à Aika e Luna.
+          Em homenagem à Aika e à Luna.
       </p>
       <p>
           Aikana.

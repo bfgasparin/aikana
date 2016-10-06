@@ -1,0 +1,25 @@
+
+.bg {
+    background-image: url(../images/external-room.jpeg) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    height:  200px;
+    background-color: #999;
+}
+
+.bg-couch {
+    @extend .bg;
+    background-image: url(../images/couch.jpeg) ;
+}
+
+.bg-barbecue {
+    @extend .bg;
+    background-image: url(../images/barbecue.jpeg) ;
+}
+
+.bg-tv {
+    @extend .bg;
+    background-image: url(../images/tv.jpeg) ;
+}

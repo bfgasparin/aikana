@@ -7,11 +7,9 @@
 
   <div class="nav-center" >
   <div class="tile">
-    <span class="is-hidden-mobile">
        <figure class="image is-64x64">
          <img src="images/logo.png">
       </figure>
-    </span>
     </div>
   </div>
 
@@ -39,3 +37,22 @@
     @endif
   </div>
 </nav>
+
+  <div class="hero">
+    <div class="container">
+      <div class="tile">
+        <span class="nav-toggle">
+            <div class="columns is-mobile">
+                <div class="column"></div>
+                  <div class="column ">
+                      <a class="button is-medium is-primary is-outlined" href="{{ url('/login') }}">Logar</a>
+                  </div>
+                  <div class="column">
+                      <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
+                  </div>
+                <div class="column"></div>
+            </div>
+        </span>
+      </div>
+    </div>
+  </div>
