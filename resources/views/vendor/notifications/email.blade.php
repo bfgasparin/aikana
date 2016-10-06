@@ -50,10 +50,9 @@ $style = [
 
     /* Buttons ------------------------------ */
 
-    'button' => 'display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
-                 border-color: #00d1b2; font-size: 18px; height: 40px; padding-left: 14px; padding-right: 14px;
-                 background-color: transparent; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
-                 border-width: 1px; color: #00d1b2;
+    'button' => 'display: block; color: #3273dc; display: inline-block; width: 200px; min-height: 
+                 20px; padding: 16px 20px; border-width: 1px; border-color: #3273dc; background-color: transparent;
+                 border-radius: 3px; font-size: 22px; line-height: 25px;
                  text-align: center; text-decoration: none; -webkit-text-size-adjust: none;',
 
     'button--green' => 'background-color: #00d1b2;',
@@ -179,7 +178,6 @@ $style = [
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
                                             <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
-                                            Todos os direitos Gasparin reservados.
                                         </p>
                                     </td>
                                 </tr>
