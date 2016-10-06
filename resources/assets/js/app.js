@@ -15,9 +15,11 @@ require('./bootstrap');
 
 import Notification from 'vue-bulma-notification';
 import UserRegister from './layouts/components/UserRegister';
+import Dashboard from './layouts/components/Dashboard';
 
 Vue.component('notification', Notification);
 Vue.component('user-register', UserRegister);
+Vue.component('dashboard', Dashboard);
 
 const app = new Vue({
     el: '#app'
