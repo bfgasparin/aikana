@@ -1,23 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="hero is-medium is-primary is-bold">
-  <div class="hero-body">
+<section class="section is-medium">
     <div class="container">
-      <h1 class="title">
-        {{ config('app.name') }}
-      </h1>
-      <h2 class="subtitle">
-        A diversão para as festas da família!
-      </h2>
-    </div>
+        <div class="notification is-primary is-bold">
+          <h1 class="title">
+            {{ config('app.name') }}
+          </h1>
+          <h2 class="subtitle">
+            A diversão para as festas da família!
+          </h2>
+        </div>
   </div>
-
 </section>
 
   <div class="bg-couch">
 
   </div>
+
 <section class="hero is-medium is-light is-bold">
   <div class="hero-body">
     <div class="container">

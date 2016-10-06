@@ -3,7 +3,6 @@
     background-image: url(../images/external-room.jpeg) ;
     background-position: center center;
     background-repeat:  no-repeat;
-    background-attachment: fixed;
     background-size:  cover;
     height:  200px;
     background-color: #999;
@@ -22,4 +21,13 @@
 .bg-tv {
     @extend .bg;
     background-image: url(../images/tv.jpeg) ;
+}
+
+.bg-table {
+    @extend .bg;
+    background-image: url(../images/table.jpeg) ;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
 }
