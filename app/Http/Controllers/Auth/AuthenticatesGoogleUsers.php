@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Illuminate\Foundation\Auth\RedirectsUsers;
+use Illuminate\Http\Request;
 use Socialite;
 
 trait AuthenticatesGoogleUsers
@@ -24,7 +25,7 @@ trait AuthenticatesGoogleUsers
      *
      * @return Response
      */
-    public function handleGoogleProviderCallback()
+    public function handleGoogleProviderCallback(Request $request)
     {
        $googleUser = Socialite::driver('google')->user();
 
@@ -49,7 +50,7 @@ trait AuthenticatesGoogleUsers
 
         auth()->login($user);
 
-        return redirect()->intended($this->redirectPath());
+        return $this->sendLoginResponse($request);
     }
 
     public function findGoogleUser($googleUser)

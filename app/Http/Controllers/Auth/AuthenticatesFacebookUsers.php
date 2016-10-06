@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Socialite;
 
 trait AuthenticatesFacebookUsers
@@ -23,7 +24,7 @@ trait AuthenticatesFacebookUsers
      *
      * @return Response
      */
-    public function handleFacebookProviderCallback()
+    public function handleFacebookProviderCallback(Request $request)
     {
         $facebookUser = Socialite::driver('facebook')->user();
 
@@ -47,7 +48,7 @@ trait AuthenticatesFacebookUsers
 
         auth()->login($user);
 
-        return redirect()->intended($this->redirectPath());
+        return $this->sendLoginResponse($request);
 
     }
 

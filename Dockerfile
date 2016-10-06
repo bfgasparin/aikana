@@ -19,3 +19,5 @@ RUN apt-get update && apt-get install -y \
 
 # Configure php
 COPY resources/docker/php/conf.d/timezone.ini $PHP_INI_DIR/conf.d/
+
+RUN php artisan route:cache
