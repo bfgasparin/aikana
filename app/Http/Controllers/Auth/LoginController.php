@@ -50,10 +50,10 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        // if (empty($user->invite)){
-        //     auth()->logout($user);
-        //     return redirect('login')->with('status', 'Você precisa aceitar um convite para entrar no sistema');
-        // }
+        if (empty($user->invite)){
+            auth()->logout($user);
+            return redirect('login')->with('status', 'Você precisa aceitar um convite para entrar no sistema');
+        }
 
         if (!$user->verified){
             auth()->logout($user);
