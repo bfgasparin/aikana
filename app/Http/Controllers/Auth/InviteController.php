@@ -33,6 +33,6 @@ class InviteController extends Controller
 
         $request->session()->put('invite_id', $invite->id);
         
-        return redirect('register');
+        return redirect('/');
     }
 }
