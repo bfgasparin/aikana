@@ -7,11 +7,6 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Enable ssl
-RUN a2enmod ssl
-EXPOSE 443
-VOLUME /etc/apache2/certs/
-
 # Install Image manipulation Dependencies (only for PNG and JPEG)
 RUN apt-get update && apt-get install -y \
         libpng-dev \
