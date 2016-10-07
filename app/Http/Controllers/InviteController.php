@@ -19,8 +19,8 @@ class InviteController extends Controller
 
         $invite->guest->unreadNotifications->markAsRead();
         if ($invite->isAccepted()){
-            return $this->redirect('login')
-                ->with('status', 'O convite já foi aceito e não precisa ser aceito novamente')
+            return redirect('login')
+                ->with('status', 'Este convite já foi usado e voçê não pode usá-lo novamente.')
             ;
         }
 
