@@ -8,11 +8,14 @@
         </h2>
         <h2 class="subtitle">
           Mas, os serviços do {{ config('app.name') }} só estarão disponíveis para uso no dia da festa. 
-          Até lá. Continue acessando <strong>{{ config('app.name') }} </strong> para saber mais
+          Até lá. 
           novidades sobre seus serviços.
 
           Atualizaremos esa página em breve.
 
+        </h2>
+        <h2 class="subtitle">
+          Continue acessando <strong>{{ config('app.name') }} </strong> para saber mais
         </h2>
         <h2 class="subtitle">
           <strong>Ate lá</strong>

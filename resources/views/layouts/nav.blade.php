@@ -26,7 +26,7 @@
     @else
 
     <span class="nav-item">
-        <a  class="button is-medium is-info is-outlined" href="{{ url('/logout') }}"
+        <a  class="button is-medium is-primary is-outlined" href="{{ url('/logout') }}"
             onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
             Logout
@@ -40,12 +40,12 @@
   </div>
 
 </nav>
-@if ( !Auth::check() )
     <div class="hero nav-mobile">
         <div class="container">
             <div class="tile">
                 <span class="nav-toggle">
                     <div class="columns is-mobile">
+                    @if ( !Auth::check() )
                         <div class="column"></div>
                           <div class="column ">
                               <a class="button is-medium is-primary is-outlined" href="{{ url('/login') }}">Logar</a>
@@ -54,9 +54,16 @@
                               <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
                           </div>
                         <div class="column"></div>
+                    @else
+                        <div class="column"></div>
+                       <div class="column">
+                              <a class="button is-medium is-primary is-outlined" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        </div>
+                        <div class="column"></div>
+                    @endif
                     </div>
                 </span>
             </div>
         </div>
     </div>
-@endif
+
