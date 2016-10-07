@@ -15,6 +15,7 @@ class MessageCreated implements ShouldBroadcast
     use InteractsWithSockets, SerializesModels;
 
     public $message;
+
     /**
      * Create a new event instance.
      *
@@ -22,7 +23,9 @@ class MessageCreated implements ShouldBroadcast
      */
     public function __construct(Message $message)
     {
-        $this->message = $message;
+        $this->message = $message->load('user');
+
+        // $this->dontBroadcastToCurrentUser();
     }
 
     /**
@@ -32,6 +35,11 @@ class MessageCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('messages');
+        return ['messages'];
+    }
+
+    public function toArray()
+    {
+        return ['content' => $this->message->content];
     }
 }

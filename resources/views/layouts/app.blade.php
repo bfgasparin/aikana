@@ -22,7 +22,6 @@
 </head>
 <body>
     <div id="app">
-
         @include('layouts.nav')
         <div class="column is-half is-offset-one-quarter">
             <div class="flat notifications">

@@ -27,7 +27,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -55,7 +55,7 @@ class MessageController extends Controller
 
         event(new MessageCreated($message));
 
-        return $message;
+        return $message->load('user');
     }
 
     /**

@@ -15,7 +15,3 @@ use Illuminate\Http\Request;
 
 
 Route::post('/messages', 'API\MessageController@store');
-
-// Route::get('/user', function (Request $request) {
-//     return $request->user();
-// })->middleware('auth:api');

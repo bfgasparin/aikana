@@ -25,13 +25,13 @@
           <article class="media">
             <div class="media-left">
               <figure class="image is-64x64">
-                <img src="images/bruno.jpeg" alt="Image">
+                <img src="/images/bruno.jpeg" alt="Image">
               </figure>
               <figure class="image is-64x64">
-                <img src="images/marta.jpeg" alt="Image">
+                <img src="/images/marta.jpeg" alt="Image">
               </figure>
               <figure class="image is-64x64">
-                <img src="images/victor.jpeg" alt="Image">
+                <img src="/images/victor.jpeg" alt="Image">
               </figure>
             </div>
             <div class="media-content">

@@ -24,5 +24,7 @@ Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleProviderCal
 
 Route::get('email/confirmation/{token}', 'Auth\RegisterController@confirmEmail');
 
+Route::get('messages', 'MessageController@index');
+
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'DashboardController@index');

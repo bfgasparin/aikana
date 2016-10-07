@@ -2,7 +2,7 @@
   <div class="nav-left is-hidden-mobile">
     <a class="nav-item is-brand" href="{{ url('/') }}">
         <figure class="left-logo">
-             <img src="images/simple-logo.png">
+             <img src="/images/simple-logo.png">
         </figure>
     </a>
   </div>
@@ -10,7 +10,7 @@
   <div class="nav-center" >
   <div class="tile">
        <figure class="image">
-         <img src="images/logo.png">
+         <img src="/images/logo.png">
       </figure>
     </div>
   </div>

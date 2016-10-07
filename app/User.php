@@ -4,6 +4,7 @@ namespace App;
 
 use Storage;
 use Carbon\Carbon;
+use Laravel\Passport\HasApiTokens;
 use App\Notifications\ResetPassword;
 use App\Exceptions\EmailAlreadyVerified;
 use Illuminate\Notifications\Notifiable;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
