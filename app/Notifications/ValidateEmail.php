@@ -54,9 +54,8 @@ class ValidateEmail extends Notification
             ->greeting('Aeeeee!')
             ->line('Que bom que você efetuou o cadastro. Estamos te mandando esse email apenas para confirmar
                 que esse email é válido. Por favor, confirme seu email clicando no botão abaixo.')
-            ->line('Clique no botão abaixo para trocar de senha.')
             ->action('Confirmar meu email', url('email/confirmation', $this->token))
-            ->line(sprintf('Caso não confirme seu email, você não terá acesso aos serviços do %', config('app.name')));
+            ->line(sprintf('Caso não confirme seu email, você não terá acesso aos serviços do %s', config('app.name')));
     }
 
     /**
