@@ -42,7 +42,7 @@
                   O Aniversário do <strong>Victor</strong>, do <strong>Bruno</strong> e da <strong>Marta</strong> chegou. Vamos comemorar. Estamos preparando uma 
                   grande festa, e esperamos que você possa aproveitar e curtir ao máximo. 
 
-                  Temos várias novidades pra você, e a <strong>{{ config('app.name') }}</strong> é uma delas. 
+                  Temos várias novidades pra você, e o <strong>{{ config('app.name') }}</strong> é uma delas. 
 
                   Vamos, faça o cadastro e descubra mais!
                   <span class="icon is-small"><i class="fa fa-heart"></i></span>
@@ -70,8 +70,8 @@
             Mas o que é {{ config('app.name') }} ?
           </h1>
           <h2 class="subtitle">
-            {{ config('app.name') }} é uma plataforma de interação de festas, criada por membros por Bruno Ferme Gasparin, para a família Gasparin e todos os associados :). Nela você vai poder acompanhar os eventos dessa
-            grande festa e interagir com os demais convidados! Toda a família vai aproveitar. 
+            {{ config('app.name') }} é uma plataforma de entreterimento para festas criada por Bruno Ferme Gasparin para a família Gasparin e todos os associados :). Nela você vai poder acompanhar os eventos do nosso aniversário
+            e interagir com os demais convidados! Esperamos que toda a família aproveite. 
           </h2>
         </div>
   </div>
@@ -123,7 +123,7 @@
         <div class="notification has-shadow is-light is-bold">
           <h2 class="subtitle">
             Nossas festas sempre são diferentes, alegres, e cheia de novidades. 
-            Esperamos que gostem de {{ config('app.name') }}. 
+            Esperamos que gostem do {{ config('app.name') }}. 
           </h2>
         </div>
   </div>
