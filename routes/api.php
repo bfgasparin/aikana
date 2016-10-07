@@ -13,5 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/guests', 'API\GuestController@store')->middleware(['auth:api']);
+Route::get('/guests', 'API\GuestController@index')->middleware(['auth:api']);
+Route::post('/guests/{guest}/invite', 'API\InviteController@invite')->middleware(['auth:api']);
 
 Route::post('/messages', 'API\MessageController@store');

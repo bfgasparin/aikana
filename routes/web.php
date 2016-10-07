@@ -13,7 +13,7 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('invite/{token}', 'Auth\InviteController@accept');
+Route::get('invite/{token}', 'InviteController@accept');
 
 Route::get('register/complete', 'Auth\RegisterController@showRegisterComplete');
 Auth::routes();
@@ -27,4 +27,7 @@ Route::get('email/confirmation/{token}', 'Auth\RegisterController@confirmEmail')
 Route::get('messages', 'MessageController@index');
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/guests', 'GuestController@index')->middleware(['auth']);
+
 Route::get('/dashboard', 'DashboardController@index');

@@ -35,12 +35,16 @@ class User extends Authenticatable
     protected $appends = [
         'avatar_url'
     ];
-  
+
     public function invite()
     {
         return $this->belongsTo(Invite::class);
     }
-    
+
+    public function isAdmin()
+    {
+        return $this->id = config('admin.admin_user_id');
+    }
     public function acceptedAnInvite()
     {
         return !empty($this->invite_id);
@@ -96,5 +100,5 @@ class User extends Authenticatable
             $user->email_token = str_random(30);
         });
     }
-    
+
 }

@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\User;
-use App\Invite;
-use App\Http\Requests;
-use Illuminate\Http\Request;
+use App\Guest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Invite;
+use App\User;
+use Illuminate\Http\Request;
 
 class InviteController extends Controller
 {
+
+
     public function accept(Request $request, string $token)
     {
         $invite = Invite::whereToken($token)->first();
-        
+
         $invite->guest->unreadNotifications->markAsRead();
         if ($invite->isAccepted()){
             return $this->redirect('login')
@@ -32,7 +35,7 @@ class InviteController extends Controller
         }
 
         $request->session()->put('invite_id', $invite->id);
-        
+
         return redirect('/');
     }
 }

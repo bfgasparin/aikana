@@ -13,10 +13,27 @@ class Guest extends Model
 
     protected $fillable = ['email'];
 
+    protected $appends = ['was_invited', 'has_accepted'];
+
     public function invites()
     {
         return $this->hasMany(Invite::class);
     }
+
+    public function getWasInvitedAttribute()
+    {
+        return !$this->invites()->get()->isEmpty();
+    }
+
+    public function getHasAcceptedAttribute()
+    {
+        return !$this->invites()
+            ->whereNotNull('accepted_at')
+            ->get()
+            ->isEmpty()
+        ;
+    }
+
 
     public function sendNewInvite()
     {

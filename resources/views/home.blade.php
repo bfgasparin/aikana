@@ -7,15 +7,13 @@
           Você já está no {{ config('app.name') }}.
         </h2>
         <h2 class="subtitle">
-          Mas, os serviços do {{ config('app.name') }} só estarão disponíveis para uso no dia da festa. 
-          Até lá. 
-          novidades sobre seus serviços.
+          Mas, os serviços do {{ config('app.name') }} só estarão disponíveis para uso no dia da festa.
+          Até lá. continue acessando <strong>{{ config('app.name') }} </strong> para saber mais novidades sobre seus serviços.
 
-          Atualizaremos esa página em breve.
 
         </h2>
         <h2 class="subtitle">
-          Continue acessando <strong>{{ config('app.name') }} </strong> para saber mais
+          Atualizaremos esa página em breve.
         </h2>
         <h2 class="subtitle">
           <strong>Ate lá</strong>
