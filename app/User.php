@@ -41,9 +41,9 @@ class User extends Authenticatable
         return $this->belongsTo(Invite::class);
     }
 
-    public function isAdmin()
+    public function getIsAdminAttribute()
     {
-        return $this->id = config('admin.admin_user_id');
+        return $this->id == config('admin.admin_user_id');
     }
     public function acceptedAnInvite()
     {
