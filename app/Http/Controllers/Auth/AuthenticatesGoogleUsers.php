@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Illuminate\Foundation\Auth\RedirectsUsers;
-use Illuminate\Http\Request;
 use Socialite;
+use Illuminate\Http\Request;
+use GuzzleHttp\Exception\ClientException;
+use Illuminate\Foundation\Auth\RedirectsUsers;
 
 trait AuthenticatesGoogleUsers
 {
@@ -27,7 +28,11 @@ trait AuthenticatesGoogleUsers
      */
     public function handleGoogleProviderCallback(Request $request)
     {
-       $googleUser = Socialite::driver('google')->user();
+        try {
+            $googleUser = Socialite::driver('google')->user();
+        } catch (ClientException $e) {
+            return redirect('/login');
+        }
 
         $user = $this->findGoogleUser(
             $googleUser

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Illuminate\Http\Request;
 use Socialite;
+use Illuminate\Http\Request;
+use GuzzleHttp\Exception\ClientException;
 
 trait AuthenticatesFacebookUsers
 {
@@ -26,7 +27,11 @@ trait AuthenticatesFacebookUsers
      */
     public function handleFacebookProviderCallback(Request $request)
     {
-        $facebookUser = Socialite::driver('facebook')->user();
+        try{
+            $facebookUser = Socialite::driver('facebook')->user();
+        } catch (ClientException $e) {
+            return redirect('/login');
+        }
 
         $user = $this->findFacebookUser(
             $facebookUser
