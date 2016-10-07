@@ -1,5 +1,5 @@
 .nav {
-    .image img {
+    .central-image img {
         width: 180px;
     }
     .nav-left {
@@ -7,6 +7,10 @@
             max-height: 65px;
         }
     }
+}
+
+.nav-item img {
+    max-height: 65px;
 }
 
 .nav-mobile {

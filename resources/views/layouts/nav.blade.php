@@ -8,10 +8,10 @@
   </div>
 
   <div class="nav-center" >
-  <div class="tile">
-       <figure class="image">
-         <img src="/images/logo.png">
-      </figure>
+    <div class="tile">
+         <figure class="central-image">
+           <img src="/images/logo.png">
+        </figure>
     </div>
   </div>
 
@@ -23,15 +23,24 @@
     <span class="nav-item">
         <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
     </span>
+
     @else
 
     <span class="nav-item">
-        <a  class="button is-medium is-primary is-outlined" href="{{ url('/logout') }}"
+        <a  class="button is-medium is-primary is-outlined" href="{{ url('/home') }}"
+            x>
+            Festa
+        </a>
+        <a  class="button is-medium is-primary is-outlined"
             onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
             Logout
         </a>
-
+        <div class="nav-item is-left">
+          <figure class="image is-64x64">
+              <img src="{{ auth()->user()->avatar_url }}">
+          </figure>
+        </div>
         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
@@ -58,6 +67,16 @@
                         <div class="column"></div>
                        <div class="column">
                               <a class="button is-medium is-primary is-outlined" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        </div>
+                        <div class="column"></div>
+                        <div class="column"></div>
+                       <div class="column">
+                              <a class="button is-medium is-primary is-outlined" href="{{ url('/home') }}">Festa</a>
+                        </div>
+                        <div class="column">
+                          <figure class="image is-64x64">
+                              <img src="{{ auth()->user()->avatar_url }}">
+                          </figure>
                         </div>
                         <div class="column"></div>
                     @endif
