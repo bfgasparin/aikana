@@ -40,6 +40,7 @@
   </div>
 
 </nav>
+@if ( !Auth::check() )
     <div class="hero nav-mobile">
         <div class="container">
             <div class="tile">
@@ -58,3 +59,4 @@
             </div>
         </div>
     </div>
+@endif

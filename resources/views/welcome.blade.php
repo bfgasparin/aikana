@@ -22,46 +22,40 @@
   <div class="hero-body">
     <div class="container">
       <div class="box">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="images/bruno.jpeg" alt="Image">
-      </figure>
-      <figure class="image is-64x64">
-        <img src="images/marta.jpeg" alt="Image">
-      </figure>
-      <figure class="image is-64x64">
-        <img src="images/victor.jpeg" alt="Image">
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong>Bora comemorar!!</strong> <span class="icon is-small"><i class="fa fa-music"></i></span>
-          <br>
-          O Aniversário do <strong>Victor</strong>, do <strong>Bruno</strong> e da <strong>Marta</strong> chegou. Vamos comemorar. Estamos preparando uma 
-          grande festa, e esperamos que você possa aproveitar e curtir ao máximo. 
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img src="images/bruno.jpeg" alt="Image">
+              </figure>
+              <figure class="image is-64x64">
+                <img src="images/marta.jpeg" alt="Image">
+              </figure>
+              <figure class="image is-64x64">
+                <img src="images/victor.jpeg" alt="Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Bora comemorar!!</strong> <span class="icon is-small"><i class="fa fa-music"></i></span>
+                  <br>
+                  O Aniversário do <strong>Victor</strong>, do <strong>Bruno</strong> e da <strong>Marta</strong> chegou. Vamos comemorar. Estamos preparando uma 
+                  grande festa, e esperamos que você possa aproveitar e curtir ao máximo. 
 
-          Temos várias novidades pra você, e <strong>{{ config('app.name') }}</strong> é uma delas. 
-        </p>
-      </div>
-      <nav class="level">
-        <div class="level-left">
-          <a class="level-item">
-            <span class="icon is-small"><i class="fa fa-reply"></i></span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small"><i class="fa fa-heart"></i></span>
-          </a>
+                  Temos várias novidades pra você, e a <strong>{{ config('app.name') }}</strong> é uma delas. 
+
+                  Vamos, faça o cadastro e descubra mais!
+                  <span class="icon is-small"><i class="fa fa-heart"></i></span>
+
+                  <span class="nav-item">
+                      <a class="button is-medium is-primary is-outlined" href="{{ url('/register') }}">Cadastrar</a>
+                  </span>
+
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
-      </nav>
-    </div>
-  </article>
-</div>
-
     </div>
   </div>
 
@@ -69,7 +63,19 @@
   <div class="bg-barbecue">
 
   </div>
-
+<section class="section is-medium">
+    <div class="container">
+        <div class="notification is-primary is-bold">
+          <h1 class="title">
+            Mas o que é {{ config('app.name') }} ?
+          </h1>
+          <h2 class="subtitle">
+            {{ config('app.name') }} é uma plataforma de interação de festas, criada por membros por Bruno Ferme Gasparin, para a família Gasparin e todos os associados :). Nela você vai poder acompanhar os eventos dessa
+            grande festa e interagir com os demais convidados! Toda a família vai aproveitar. 
+          </h2>
+        </div>
+  </div>
+</section>
 <section class="hero is-medium is-light is-bold">
   <div class="hero-body">
     <div class="container">
@@ -97,10 +103,10 @@
         <div class="column">
             <div class="box">
                 <h1 class="title">
-                  Alegria
+                  Diversão
                 </h1>
                 <h2 class="subtitle">
-                  Queremos deixar você feliz.
+                  Só queremos que você aproveite a festa
                 </h2>
             </div>
         </div> 
@@ -110,7 +116,17 @@
   </div>
 
 </section>
-  <div class="bg-tv">
-
+<div class="bg-tv">
+</div>
+<section class="section is-medium">
+    <div class="container">
+        <div class="notification has-shadow is-light is-bold">
+          <h2 class="subtitle">
+            Nossas festas sempre são diferentes, alegres, e cheia de novidades. 
+            Esperamos que gostem de {{ config('app.name') }}. 
+          </h2>
+        </div>
   </div>
+</section>
+
 @endsection
