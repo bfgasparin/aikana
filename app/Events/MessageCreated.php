@@ -25,7 +25,7 @@ class MessageCreated implements ShouldBroadcast
     {
         $this->message = $message->load('user');
 
-        // $this->dontBroadcastToCurrentUser();
+        $this->dontBroadcastToCurrentUser();
     }
 
     /**

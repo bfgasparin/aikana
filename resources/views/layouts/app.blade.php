@@ -21,13 +21,14 @@
     </script>
 </head>
 <body>
+
     <div id="app">
         @include('layouts.nav')
         <div class="column is-half is-offset-one-quarter">
             <div class="flat notifications">
                 <div class="container">
                     @if (session('status'))
-                        <notification class="is-info" :title="'{{ session('title') }}'" :direction="'Right'" message="{{ session('status') }}" :duration="0"></notification>
+                        <notification class="is-info" :title="'{{ session('title') }}'" :direction="'Right'" message="{{ session('status') }}" :duration="3"></notification>
                     @endif
                 </div>
             </div>

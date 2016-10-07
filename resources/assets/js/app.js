@@ -21,6 +21,7 @@ import GuestsList from './layouts/components/guests/Index';
 Vue.component('notification', Notification);
 Vue.component('user-register', UserRegister);
 Vue.component('dashboard', Dashboard);
+Vue.component('messages-list', MessagesList);
 Vue.component('guests-list', GuestsList);
 
 const app = new Vue({

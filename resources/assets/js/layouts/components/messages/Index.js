@@ -1,6 +1,9 @@
+import Message from './../../../components/Message.vue';
+
 export default {
 
     props: ['user'],
+    components: {Message},
 
     data: function() {
         return {
@@ -30,7 +33,7 @@ export default {
         },
 
         isUserMessage(message) {
-            return true;//message.user.id === this.user.id;
+            return message.user.id == this.user.id;
         }
     }
 }
