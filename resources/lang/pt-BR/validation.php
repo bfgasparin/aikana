@@ -47,8 +47,8 @@ return [
     'ip'                   => ':attribute deve ser um IP válido.',
     'json'                 => ':attribute deve ser um JSON válido.',
     'max'                  => [
-        'numeric' => 'O :attribute deve ser maior que :max.',
-        'file'    => 'O :attribute deve ter mais que :max kilobytes.',
+        'numeric' => 'O :attribute não pode ser maior que :max.',
+        'file'    => 'O :attribute não pode ter mais que :max kilobytes.',
         'string'  => 'O :attribute não pode ter mais que  :max characteres.',
         'array'   => 'O :attribute não pode ter mais que :max items.',
     ],

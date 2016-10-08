@@ -1,11 +1,10 @@
 <template>
    <div>
       <label :for="name">
-            <input class="" type="file" :name="name" :id="id || name" :accept="accept" @click="fileInputClick" 
+            <input class="button is-large is-fullwidth" type="file" :name="name" :id="id || name" :accept="accept" @click="fileInputClick" 
       @change="fileInputChange" :multiple="multiple" >
             <slot></slot>
       </label>
-      <button class="button is-warning is-large is-fullwidth" type="button" @click="fileUpload">Upload</button>
     </div> 
 </template>
 
@@ -40,6 +39,7 @@ export default {
       // get the group of files assigned to this field
       var ident = this.id || this.name
       this.myFiles = document.getElementById(ident).files;
+      this.fileUpload();
       // this.$dispatch('onFileChange', this.myFiles);
     },
     _onProgress: function(e) {
@@ -103,13 +103,14 @@ export default {
       if(this.myFiles.length > 0) {
         // a hack to push all the Promises into a new array
         var arrayOfPromises = Array.prototype.slice.call(this.myFiles, 0).map(function(file) {
-          return this._handleUpload(file);
+            return this._handleUpload(file);
         }.bind(this));
         // wait for everything to finish
         Promise.all(arrayOfPromises).then(function(allFiles) {
+          
           // this.$dispatch('onAllFilesUploaded', allFiles);
         }.bind(this)).catch(function(err) {
-          // this.$dispatch('onFileError', this.myFiles, err);
+            alert(err.file);
         }.bind(this));
       } else {
         // someone tried to upload without adding files

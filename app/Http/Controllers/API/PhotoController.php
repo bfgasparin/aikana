@@ -10,14 +10,23 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Events\PhotoUploaded;
 use App\Http\Controllers\Controller;
+use Validator;
 
 class PhotoController extends Controller
 {
     public function upload(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'file' => 'image|max:10000',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
         $file = $request->file('file');
         if (!$file->isValid()) {
-            abort(404, 'The file is not valid');
+            abort(404, 'O arquvo não é válido.');
         }
 
         $path = $file->store('moments');

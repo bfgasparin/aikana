@@ -1,10 +1,11 @@
 import FileUpload from './../../../components/FileUpload.vue';
+import Upload from './../../../components/Upload.vue';
 
 export default {
 
     props: ['user'],
 
-    components: {FileUpload},
+    components: {FileUpload, Upload},
 
     data: function() {
         return {            

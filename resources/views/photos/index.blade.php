@@ -7,28 +7,19 @@
         <template v-if="photos.length > 0">
             <div class="section">
 
-            <div v-for="photo in photos">
-                <div class="card">
-                      <div class="card-image">
-                        <figure class="image is-4by3">
-                          <img :src="photo.path_url" alt="">
-                        </figure>
-                      </div>
-                      <div class="card-content">
-                        <div class="media">
-                          <div class="media-left">
-                            <figure class="image is-32x32">
-                              <img :src="photo.user.avatar_url" alt="Image">
-                            </figure>
-                          </div>
-                          <div class="media-content">
-                            <p class="title is-5">@{{ photo.user.name }}</p>
-                            <p class="subtitle is-6">@{{ photo.created_at}}</p>
-                          </div>
+              <div class="container">
+                <div class="columns">
+                    <div class="column"></div>
+                    <div class="column">
+                        <div class="photos-list" v-for="photo in photos">
+                            <div class="tile">
+                              <upload :photo="photo" :direction="'Up'" :duration="100000"></upload>
+                            </div>
                         </div>
-                      </div>
                     </div>
-            </div>
+                    <div class="column"></div>
+                </div>
+              </div>
             </div>
         </template>
         <div class="section">
