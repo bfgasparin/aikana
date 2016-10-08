@@ -41,4 +41,9 @@ class PhotoController extends Controller
         return $photo;
 
     }
+
+    public function lastest()
+    {
+        return Photo::with('user')->orderBy('created_at', 'desc')->first();
+    }
 }

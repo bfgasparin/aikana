@@ -29,6 +29,14 @@ Route::get('photos', 'PhotoController@index');
 
 Route::get('/home', 'HomeController@index');
 
+
 Route::get('/guests', 'GuestController@index')->middleware(['auth']);
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/painel', 'PainelController@index');
+
+});
+
 
 Route::get('/dashboard', 'DashboardController@index');
