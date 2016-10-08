@@ -22,13 +22,6 @@
                 {{ message.content }}
               </p>
             </div>
-            <nav class="level">
-              <div class="level-left">
-                <a class="level-item">
-                  <span class="icon is-small"><i class="fa fa-heart"></i></span>
-                </a>
-              </div>
-            </nav>
           </div>
           <div class="media-right">
               <button class="delete touchable" @click="close()"></button>
