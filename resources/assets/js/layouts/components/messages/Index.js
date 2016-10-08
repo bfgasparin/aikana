@@ -33,7 +33,7 @@ export default {
         },
 
         isUserMessage(message) {
-            return message.user.id == this.user.id;
+            return message.user_id == this.user.id;
         }
     }
 }
