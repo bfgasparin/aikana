@@ -33,10 +33,11 @@
                 </div>
             </div>
         </div>
-
+        @if ( !auth()->guest() )
+             @include('actions')
+        @endif
 
         @yield('content')
-
         @include('layouts.footer')
     </div>
     <!-- Scripts -->
