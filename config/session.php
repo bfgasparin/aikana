@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'connection' => 'default',
+    'connection' => env('SESSION_CONNECTION', 'default'),
 
     /*
     |--------------------------------------------------------------------------
