@@ -17,6 +17,7 @@ export default {
     mounted: function () {
         Echo.channel('messages')
           .listen('MessageCreated', (e) => {
+              e.message.user = e.user;
               this.messages.push(e.message);
           });
     },

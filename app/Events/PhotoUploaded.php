@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Message;
+use App\Photo;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -10,23 +10,22 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class MessageCreated implements ShouldBroadcast
+class PhotoUploaded implements ShouldBroadcast
 {
     use InteractsWithSockets, SerializesModels;
 
-    public $message;
+    public $photo;
     public $user;
+    
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Message $message)
+    public function __construct(Photo $photo)
     {
-        $this->message = $message->load('user');
-        $this->user = $message->user;
-
-        $this->dontBroadcastToCurrentUser();
+        $this->photo = $photo;
+        $this->user = $photo->user;
     }
 
     /**
@@ -36,6 +35,6 @@ class MessageCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['messages'];
+        return ['photos'];
     }
 }

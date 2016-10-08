@@ -41,5 +41,6 @@
     </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </body>
 </html>

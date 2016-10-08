@@ -14,7 +14,7 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('invite/{token}', 'InviteController@accept');
-
+Route::post('upload/avatar', 'API\PhotoController@upload');
 Route::get('register/complete', 'Auth\RegisterController@showRegisterComplete');
 Auth::routes();
 Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebookProvider');
@@ -25,6 +25,7 @@ Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleProviderCal
 Route::get('email/confirmation/{token}', 'Auth\RegisterController@confirmEmail');
 
 Route::get('messages', 'MessageController@index');
+Route::get('photos', 'PhotoController@index');
 
 Route::get('/home', 'HomeController@index');
 
