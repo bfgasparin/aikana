@@ -20,5 +20,5 @@ Route::post('/guests/{guest}/invite', 'API\InviteController@invite')->middleware
 Route::post('/messages', 'API\MessageController@store');
 
 Route::get('/painel/latest', 'API\PainelController@lastest');
-Route::post('/painel/photo', 'API\PainelController@photo');
+Route::get('/painel/new', 'API\PainelController@new');
 Route::post('/painel/stars', 'API\PainelController@storeStars');

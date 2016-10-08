@@ -29,7 +29,7 @@ export default {
                 this.painelPhoto = e.painelPhoto;
                 this.painelPhoto.photo = e.photo;
                 this.painelPhoto.photo.user = e.user;
-          });
+        });
     },
 
     methods: {

@@ -13,7 +13,9 @@
             <div class="card-image">
                 <figure class="image is-fullwidth">
                   <img :src="photo.path_url" alt="">
+                  <span class="tag is-warning is-large is-pulled-right">{{ stars }}</span>
                 </figure>
+
             </div>
         </div>
     </div>
@@ -27,6 +29,7 @@ export default {
 
   props: {
     photo: Object,
+    stars: Number,
     direction: {
       type: String,
       default: 'Right'

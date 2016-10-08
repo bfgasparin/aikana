@@ -15,7 +15,7 @@ export default {
 
     data: function() {
         return {            
-            mainPhoto: null
+            painelPhoto: null
         }
     },
 
@@ -25,6 +25,10 @@ export default {
 
     mounted: function () {
         this.setRefreshTile();
+        Echo.channel('painel')
+          .listen('PhotoStared', (e) => {
+                this.painelPhoto.stars++;
+        });
     },
 
     destroyed () {
@@ -39,21 +43,14 @@ export default {
         changePhoto() {
           clearTimeout(this.timer)
           this.fetchLatestPhoto();
-          this.setRefreshTile();
-
-          this.$http.post('api/painel/photo', this.mainPhoto)
-                .then((response) => {
-                    //
-            }, (response) => {
-                // error callback
-            });
-          
+          this.setRefreshTile();          
         },
 
         fetchLatestPhoto () {
-            this.$http.post('api/painel/latest', this.guestForm)
+            this.$http.get('api/painel/new')
                 .then((response) => {
-                    this.mainPhoto = response.data.photo;
+                    this.painelPhoto = response.data;
+                    this.painelPhoto.stars = this.painelPhoto.total_stars;
             }, (response) => {
                 // error callback
             });
