@@ -15,7 +15,8 @@ class PainelController extends Controller
     public function new()
     {
         $painelPhoto = PainelPhoto::create([
-            'photo_id' => Photo::orderBy('created_at', 'desc')->get()->first()->id,
+            'photo_id' => Photo::find(
+                rand(1, Photo::count()))->id,
             'stars' => 0
         ]);
 
