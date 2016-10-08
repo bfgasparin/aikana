@@ -7,7 +7,7 @@
 
         <div class="flat notifications panel-notification">
             <div class="container">
-                <messages-notification :duration="300000"></messages-notification>
+                <messages-notification :duration="420000"></messages-notification>
             </div>
         </div>
     </div>
