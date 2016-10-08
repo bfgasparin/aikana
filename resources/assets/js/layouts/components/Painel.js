@@ -15,7 +15,6 @@ export default {
 
     data: function() {
         return {            
-            photos: [],
             mainPhoto: null
         }
     },
@@ -41,13 +40,20 @@ export default {
           clearTimeout(this.timer)
           this.fetchLatestPhoto();
           this.setRefreshTile();
+
+          this.$http.post('api/painel/photo', this.mainPhoto)
+                .then((response) => {
+                    //
+            }, (response) => {
+                // error callback
+            });
           
         },
 
         fetchLatestPhoto () {
-            this.$http.post('api/photos/latest', this.guestForm)
+            this.$http.post('api/painel/latest', this.guestForm)
                 .then((response) => {
-                    this.mainPhoto = response.data;
+                    this.mainPhoto = response.data.photo;
             }, (response) => {
                 // error callback
             });

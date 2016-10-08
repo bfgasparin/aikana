@@ -24,8 +24,6 @@ Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleProviderCal
 
 Route::get('email/confirmation/{token}', 'Auth\RegisterController@confirmEmail');
 
-Route::get('messages', 'MessageController@index');
-Route::get('photos', 'PhotoController@index');
 
 Route::get('/home', 'HomeController@index');
 
@@ -34,9 +32,12 @@ Route::get('/guests', 'GuestController@index')->middleware(['auth']);
 
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('photos', 'PhotoController@index');
+    Route::get('messages', 'MessageController@index');
     Route::get('/painel', 'PainelController@index');
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/painel/star', 'PainelController@showStar');
 
 });
 
 
-Route::get('/dashboard', 'DashboardController@index');

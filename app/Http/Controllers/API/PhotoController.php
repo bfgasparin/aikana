@@ -5,12 +5,13 @@ namespace App\Http\Controllers\API;
 use App\User;
 use App\Guest;
 use App\Photo;
+use Validator;
 use App\Invite;
+use App\PainelPhoto;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Events\PhotoUploaded;
 use App\Http\Controllers\Controller;
-use Validator;
 
 class PhotoController extends Controller
 {
@@ -36,14 +37,16 @@ class PhotoController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
+        if (PainelPhoto::first() == null){
+            PainelPhoto::create([
+                'photo_id' => $photo->id,
+                'stars' => 0
+            ]);
+        }
+
         event(new PhotoUploaded($photo));
 
         return $photo;
 
-    }
-
-    public function lastest()
-    {
-        return Photo::with('user')->orderBy('created_at', 'desc')->first();
     }
 }

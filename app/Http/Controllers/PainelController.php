@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\PainelPhoto;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class PainelController extends Controller
 {
@@ -12,5 +12,10 @@ class PainelController extends Controller
     public function index()
     {
         return view('painel');
+    }
+
+    public function showStar()
+    {
+        return view('painel.star');
     }
 }

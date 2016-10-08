@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Photo;
+use App\PainelPhoto;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -10,22 +10,24 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class PhotoUploaded implements ShouldBroadcast
+class PainelPhotoAdded implements ShouldBroadcast
 {
     use InteractsWithSockets, SerializesModels;
 
+    public $painelPhoto;
     public $photo;
     public $user;
-    
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Photo $photo)
+    public function __construct(PainelPhoto $painelPhoto)
     {
-        $this->photo = $photo;
-        $this->user = $photo->user;
+        $this->painelPhoto = $painelPhoto;
+        $this->photo = $painelPhoto->photo;
+        $this->user = $painelPhoto->photo->user
     }
 
     /**
@@ -35,6 +37,6 @@ class PhotoUploaded implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('photos');
+        return [''];
     }
 }

@@ -8,14 +8,14 @@
             <div class="section">
 
             <div v-for="message in messages">
-                <message :from-current-user="isUserMessage(message)" :message="message" :direction="'Up'" :duration="100000"></message>
+                <message :from-current-user="isUserMessage(message)" :message="message" :direction="'Up'" :duration="100000"></message >
             </div>
             </div>
         </template>
         <div class="section">
             <form  @submit.prevent="create">
                 <p class="control">
-                  <textarea class="textarea is-medium" placeholder="Insira sua mensagem aqui" v-model="messageForm.content"></textarea>
+                  <textarea v-on:keyup.enter="create" class="textarea is-medium" placeholder="Insira sua mensagem aqui" v-model="messageForm.content"></textarea>
                 </p>
                 <input class="button is-warning is-large is-fullwidth" v-bind:class="{ 'is-disabled' : !messageForm.content }" type="submit" name="submit" value="Enviar">
             </form>

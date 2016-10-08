@@ -18,6 +18,7 @@ import UserRegister from './layouts/components/UserRegister';
 import Dashboard from './layouts/components/Dashboard';
 import Painel from './layouts/components/Painel';
 import MessagesList from './layouts/components/messages/Index';
+import PainelStar from './layouts/components/PainelStar';
 import PhotosList from './layouts/components/photos/Index';
 import GuestsList from './layouts/components/guests/Index';
 
@@ -29,6 +30,7 @@ Vue.component('painel', Painel);
 Vue.component('messages-list', MessagesList);
 Vue.component('guests-list', GuestsList);
 Vue.component('photos-list', PhotosList);
+Vue.component('painel-star', PainelStar);
 
 const app = new Vue({
     el: '#app'
