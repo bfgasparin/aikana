@@ -3,7 +3,7 @@
       <label :for="name">
             <input class="button is-large is-fullwidth" type="file" :name="name" :id="id || name" :accept="accept" @click="fileInputClick" 
       @change="fileInputChange" :multiple="multiple" >
-            <input class="button is-warning is-large is-fullwidth"  name="submit" value="Enviar " @click="fileInputClick" >
+            <input class="button is-warning is-large is-fullwidth"  name="submit" value="Enviar " @click="fileUpload" >
             <slot></slot>
       </label>
     </div> 
@@ -40,7 +40,7 @@ export default {
       // get the group of files assigned to this field
       var ident = this.id || this.name
       this.myFiles = document.getElementById(ident).files;
-      this.fileUpload();
+
       // this.$dispatch('onFileChange', this.myFiles);
     },
     _onProgress: function(e) {
