@@ -3,6 +3,7 @@
       <label :for="name">
             <input class="button is-large is-fullwidth" type="file" :name="name" :id="id || name" :accept="accept" @click="fileInputClick" 
       @change="fileInputChange" :multiple="multiple" >
+            <input class="button is-warning is-large is-fullwidth"  name="submit" value="Enviar " @click="fileInputClick" >
             <slot></slot>
       </label>
     </div> 
